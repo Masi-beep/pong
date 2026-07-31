@@ -42,8 +42,10 @@ class Opponent(Paddle):
 
     def get_direction(self):
         self.direction = 1 if self.rect.centery < self.ball.rect.centery else -1
-        if self.ball.rect.centerx > WINDOW_WIDTH/2 and self.ball.direction.x >= 0:
+        if self.ball.direction.x >= 0:
             self.direction = 0
+        #if self.ball.rect.centerx > WINDOW_WIDTH/2 and self.ball.direction.x >= 0:
+        #    self.direction = 0
 
 class Ball(pygame.sprite.Sprite):
     def __init__(self, groups, paddle_sprites, update_score):
